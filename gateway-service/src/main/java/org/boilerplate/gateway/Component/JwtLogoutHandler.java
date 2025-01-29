@@ -24,10 +24,10 @@ public class JwtLogoutHandler implements ServerLogoutHandler{
                 .filter(authHeader -> authHeader.startsWith("Bearer "))
                 .map(authHeader -> authHeader.substring(7))
                 .flatMap(token -> {
-                blackListService.addTokenToBlackList(token);
-                return Mono.empty();
-            });
-        
+                    blackListService.addTokenToBlackList(token);
+                    return Mono.empty();
+                }
+            );
     }
     
 }
