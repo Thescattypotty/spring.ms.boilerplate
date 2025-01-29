@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.2</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>org.boilerplate</groupId>
+    <artifactId>core</artifactId>
+    <version>0.0.1</version>
+    <name>Core</name>
+    <packaging>pom</packaging>
+
+    <url>https://github.com/Thescattypotty/spring.ms.boilerplate</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/Thescattypotty/spring.ms.boilerplate/blob/main/LICENSE</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>Sênshî</id>
+            <name>Bennis Yahya</name>
+            <email>bennis-yahya@outlook.com</email>
+            <url>https://bennis-yahya.vercel.app</url>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/Thescattypotty/spring.ms.boilerplate.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:Thescattypotty/spring.ms.boilerplate.git</developerConnection>
+        <tag />
+        <url>https://github.com/Thescattypotty/spring.ms.boilerplate</url>
+    </scm>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
+    </properties>
+
+    <modules>
+        <module>config-server</module>
+        <module>registry-service</module>
+        <module>gateway-service</module>
+        <module>circuit-service</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
