@@ -1,0 +1,7 @@
+server:
+  port: 8222
+
+jwt:
+  secret: secret
+  expiration: 86400000
+  
